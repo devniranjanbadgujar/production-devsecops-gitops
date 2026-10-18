@@ -1,0 +1,22 @@
+# Local environment and secret files
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets*.yaml
+secrets*.yml
+
+# Local environment-specific Helm values
+values-local.yaml
+values-secret.yaml
+
+# Temporary render and debug output
+*.rendered.yaml
+
+# Terraform state and plans
+*.tfstate
+*.tfstate.*
+*.tfplan
+tfplan
+.terraform/
