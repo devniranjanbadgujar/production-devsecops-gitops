@@ -13,6 +13,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: mongodb-data
 spec:
+  storageClassName: {{ .Values.storageClassName }}
   accessModes:
     - ReadWriteOnce
   resources:
@@ -24,6 +25,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: redis-data
 spec:
+  storageClassName: {{ .Values.storageClassName }}
   accessModes:
     - ReadWriteOnce
   resources:

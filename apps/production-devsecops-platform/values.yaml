@@ -1,3 +1,5 @@
+storageClassName: gp2
+
 backend:
   image: production-devsecops-platform-backend
   tag: "5"
@@ -18,3 +20,8 @@ redis:
 
 secrets:
   existingSecret: "production-devsecops-secrets"
+
+# Requires AWS Load Balancer Controller installed in the cluster.
+ingress:
+  enabled: false
+  scheme: internet-facing
