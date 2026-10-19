@@ -16,3 +16,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: production-devsecops
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
