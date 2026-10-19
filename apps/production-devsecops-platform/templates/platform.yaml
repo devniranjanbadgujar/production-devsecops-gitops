@@ -7,16 +7,6 @@ data:
   PORT: "8080"
   MONGODB_URI: "mongodb://mongodb:27017/production_devsecops"
   REDIS_URL: "redis://redis:6379"
-{{- if not .Values.secrets.existingSecret }}
----
-apiVersion: v1
-kind: Secret
-metadata:
-  name: platform-secret
-type: Opaque
-data:
-  JWT_SECRET: {{ required "Set secrets.jwtSecret or secrets.existingSecret during installation" .Values.secrets.jwtSecret | b64enc | quote }}
-{{- end }}
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -155,18 +145,20 @@ spec:
             - name: JWT_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.secrets.existingSecret | default "platform-secret" }}
+                  name: {{ required "Set secrets.existingSecret to a pre-created Kubernetes Secret" .Values.secrets.existingSecret }}
                   key: JWT_SECRET
             - name: JENKINS_REPORT_TOKEN
               valueFrom:
                 secretKeyRef:
                   name: jenkins-report-credentials
                   key: JENKINS_REPORT_TOKEN
+                  optional: true
             - name: JENKINS_REPORT_USER_ID
               valueFrom:
                 secretKeyRef:
                   name: jenkins-report-credentials
                   key: JENKINS_REPORT_USER_ID
+                  optional: true
           readinessProbe:
             httpGet:
               path: /api/health

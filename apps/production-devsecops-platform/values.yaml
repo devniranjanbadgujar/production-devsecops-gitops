@@ -17,5 +17,4 @@ redis:
   storage: 1Gi
 
 secrets:
-  jwtSecret: ""
-  existingSecret: ""
+  existingSecret: "production-devsecops-secrets"

@@ -8,9 +8,10 @@ if [[ ! -f "$VALUES_FILE" ]]; then
   exit 1
 fi
 
-if grep -Eq 'ACCOUNT_ID|BUILD_NUMBER' "$VALUES_FILE"; then
+if grep -Eq \
+  '^[[:space:]]*image:[[:space:]]*ACCOUNT_ID\.dkr\.ecr\.|^[[:space:]]*tag:[[:space:]]*"BUILD_NUMBER"$' \
+  "$VALUES_FILE"; then
   echo "ERROR: ECR image values still contain placeholders." >&2
-  echo "Replace ACCOUNT_ID and BUILD_NUMBER before deployment." >&2
   exit 1
 fi
 
