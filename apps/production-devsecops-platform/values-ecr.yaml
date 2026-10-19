@@ -1,11 +1,11 @@
 # Copy to values-ecr.yaml after Terraform creates the ECR repositories.
 # Replace ACCOUNT_ID with your AWS account ID.
 backend:
-  image: ACCOUNT_ID.dkr.ecr.ap-south-1.amazonaws.com/production-devsecops-backend
-  tag: "BUILD_NUMBER"
+  image: 824953034387.dkr.ecr.ap-south-1.amazonaws.com/production-devsecops-backend
+  tag: "ab938df07bbd"
   pullPolicy: IfNotPresent
 
 frontend:
-  image: ACCOUNT_ID.dkr.ecr.ap-south-1.amazonaws.com/production-devsecops-frontend
-  tag: "BUILD_NUMBER"
+  image: 824953034387.dkr.ecr.ap-south-1.amazonaws.com/production-devsecops-frontend
+  tag: "ab938df07bbd"
   pullPolicy: IfNotPresent
