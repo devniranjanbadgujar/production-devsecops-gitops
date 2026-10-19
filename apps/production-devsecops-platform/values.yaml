@@ -23,5 +23,5 @@ secrets:
 
 # Requires AWS Load Balancer Controller installed in the cluster.
 ingress:
-  enabled: false
+  enabled: true
   scheme: internet-facing
