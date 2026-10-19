@@ -2,10 +2,10 @@
 # Replace ACCOUNT_ID with your AWS account ID.
 backend:
   image: 824953034387.dkr.ecr.ap-south-1.amazonaws.com/production-devsecops-backend
-  tag: "cf48dd652d9a"
+  tag: "106b9d9384a6"
   pullPolicy: IfNotPresent
 
 frontend:
   image: 824953034387.dkr.ecr.ap-south-1.amazonaws.com/production-devsecops-frontend
-  tag: "cf48dd652d9a"
+  tag: "106b9d9384a6"
   pullPolicy: IfNotPresent
