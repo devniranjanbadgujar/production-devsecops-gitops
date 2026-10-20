@@ -6,9 +6,9 @@ GitOps source repository for the **Production DevSecOps Platform**. It defines t
 
 ## Architecture
 
-![GitOps repository architecture](docs/gitops-architecture.svg)
+![GitOps repository architecture](docs/Architecture/gitops-architecture.svg)
 
-For the complete flow from code commit through CI, ECR, Argo CD, EKS, and monitoring, see [End-to-end architecture](docs/end-to-end-architecture.md).
+For the complete flow from code commit through CI, ECR, Argo CD, EKS, and monitoring, see [End-to-end architecture](docs/Architecture/end-to-end-architecture.svg).
 
 ## What lives here
 
